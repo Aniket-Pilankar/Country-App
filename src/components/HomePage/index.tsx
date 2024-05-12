@@ -70,7 +70,7 @@ const HomePage = () => {
   const { countries, handleChange, region } = useHomePageVM();
   const { theme } = useThemeContext();
   return (
-    <Root px={2} py={3} direction="column" gap={5}>
+    <Root>
       <ActionWrapper>
         <SearchField
           id="input-with-icon-textfield"

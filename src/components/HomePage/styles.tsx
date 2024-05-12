@@ -5,7 +5,7 @@ import {
   TextFieldProps,
   styled,
 } from "@mui/material";
-import { forMobile } from "../../utils/media-query";
+import { forMobile, forTablet } from "../../utils/media-query";
 import { generateClasses } from "../../utils/helper";
 
 export const SearchField = styled((props: TextFieldProps) => (
@@ -14,9 +14,14 @@ export const SearchField = styled((props: TextFieldProps) => (
   border: "none",
 }));
 
-export const Root = styled((props: StackProps) => <Stack {...props} />)(
-  ({ theme }) => ({})
-);
+export const Root = styled((props: StackProps) => (
+  <Stack direction="column" gap={5} {...props} />
+))(({ theme }) => ({
+  padding: theme.spacing(10, 6),
+  [forMobile(theme)]: {
+    padding: theme.spacing(6, 8),
+  },
+}));
 
 export const selectCompClasses = {
   ...generateClasses("SelectComp", ["root"]),
@@ -50,17 +55,12 @@ export const ActionWrapper = styled("div")(({ theme }) => ({
 }));
 export const Container = styled("div")(({ theme }) => ({
   display: "grid",
-  //   padding: theme.spacing(2, 3),
   gridTemplateColumns: "repeat(4,1fr)",
   gap: theme.spacing(5),
   [forMobile(theme)]: {
     gridTemplateColumns: "1fr",
-
-    "& > .MuiTextField-root": {
-      width: "100%",
-    },
-    [`& > .${selectCompClasses.root}`]: {
-      width: "100%",
-    },
+  },
+  [forTablet(theme)]: {
+    gridTemplateColumns: "repeat(2,1fr)",
   },
 }));

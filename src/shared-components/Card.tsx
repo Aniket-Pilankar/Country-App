@@ -15,7 +15,7 @@ export default function MediaCard({
   flags,
 }: Country) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ backgroundColor: "inherit" }}>
       <CardMedia sx={{ height: 140 }} image={flags} title="green iguana" />
       <CardContent>
         <Typography gutterBottom variant="h6" component="div">
