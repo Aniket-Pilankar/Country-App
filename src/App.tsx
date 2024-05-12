@@ -2,8 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import GlobalProviders from "./GlobalProviders";
 import HomePage from "./components/HomePage";
-import { ThemeContextProvider } from "./components/Context";
 import Topbar from "./shared-components/AppBar";
+import CountryDetails from "./components/CountryDetails";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Topbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/:countryId" element={<HomePage />} />
+          <Route path="/:slug" element={<CountryDetails />} />
         </Routes>
       </div>
     </GlobalProviders>

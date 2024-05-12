@@ -15,12 +15,12 @@ export default function useHomePageVM() {
     setRegion(event.target.value);
   };
 
-  // useEffect(
-  //   function initPage() {
-  //     dispatch(fetchCountries());
-  //   },
-  //   [dispatch]
-  // );
+  useEffect(
+    function initPage() {
+      dispatch(fetchCountries());
+    },
+    [dispatch]
+  );
 
   return {
     countries,

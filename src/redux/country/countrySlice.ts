@@ -25,10 +25,21 @@ const countrySlice = createSlice({
         for (const country of action.payload) {
           const newCountry: Country = {
             name: country.name.official,
+            naiveName: country.name.common,
             population: country.population,
             region: country.region,
             capital: country.capital,
             flags: country.flags.png,
+            subregion: country.subregion,
+            currencies: country.currencies
+              ? Object.values(country.currencies).map(
+                  (currency) => currency.name
+                )
+              : [],
+            tld: country.tld,
+            languages: country.currencies
+              ? Object.values(country.languages)
+              : [],
           };
           countries.push(newCountry);
         }

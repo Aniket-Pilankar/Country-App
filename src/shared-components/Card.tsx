@@ -6,6 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Country } from "../redux/country/types";
+import { Link } from "react-router-dom";
 
 export default function MediaCard({
   capital,
@@ -15,7 +16,7 @@ export default function MediaCard({
   flags,
 }: Country) {
   return (
-    <Card sx={{ backgroundColor: "inherit" }}>
+    <Card component={Link} to={`/${name}`} sx={{ backgroundColor: "inherit" }}>
       <CardMedia sx={{ height: 140 }} image={flags} title="green iguana" />
       <CardContent>
         <Typography gutterBottom variant="h6" component="div">

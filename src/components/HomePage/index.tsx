@@ -20,14 +20,20 @@ import {
 } from "./styles";
 import { options } from "../../utils/constants";
 import clsx from "clsx";
+import { Countries, Country } from "../../redux/country/types";
 
-const dummy = [
+const dummy: Countries = [
   {
     name: "Republic of Moldova",
     population: 2617820,
     region: "Europe",
     capital: ["Chișinău"],
     flags: `https://flagcdn.com/w320/md.png`,
+    naiveName: "United States of America",
+    currencies: ["Moldovan leu", "Rupee"],
+    subregion: "Eastern Europe",
+    languages: ["Hindi", "English"],
+    tld: [".md", ".md13213"],
   },
   {
     name: "United States of America",
@@ -35,6 +41,11 @@ const dummy = [
     region: "Americas",
     capital: ["Washington, D.C."],
     flags: `https://flagcdn.com/w320/md.png`,
+    naiveName: "United States of America",
+    currencies: ["Moldovan leu", "Rupee"],
+    subregion: "Eastern Europe",
+    languages: ["Hindi", "English"],
+    tld: [".md", ".md13213"],
   },
   {
     name: "Republic of Moldova",
@@ -42,6 +53,11 @@ const dummy = [
     region: "Europe",
     capital: ["Chișinău"],
     flags: `https://flagcdn.com/w320/md.png`,
+    naiveName: "United States of America",
+    currencies: ["Moldovan leu", "Rupee"],
+    subregion: "Eastern Europe",
+    languages: ["Hindi", "English"],
+    tld: [".md", ".md13213"],
   },
   {
     name: "United States of America",
@@ -49,6 +65,11 @@ const dummy = [
     region: "Americas",
     capital: ["Washington, D.C."],
     flags: `https://flagcdn.com/w320/md.png`,
+    naiveName: "United States of America",
+    currencies: ["Moldovan leu", "Rupee"],
+    subregion: "Eastern Europe",
+    languages: ["Hindi", "English"],
+    tld: [".md", ".md13213"],
   },
   {
     name: "Republic of Moldova",
@@ -56,6 +77,11 @@ const dummy = [
     region: "Europe",
     capital: ["Chișinău"],
     flags: `https://flagcdn.com/w320/md.png`,
+    naiveName: "United States of America",
+    currencies: ["Moldovan leu", "Rupee"],
+    subregion: "Eastern Europe",
+    languages: ["Hindi", "English"],
+    tld: [".md", ".md13213"],
   },
   {
     name: "United States of America",
@@ -63,6 +89,11 @@ const dummy = [
     region: "Americas",
     capital: ["Washington, D.C."],
     flags: `https://flagcdn.com/w320/md.png`,
+    naiveName: "United States of America",
+    currencies: ["Moldovan leu", "Rupee"],
+    subregion: "Eastern Europe",
+    languages: ["Hindi", "English"],
+    tld: [".md", ".md13213"],
   },
 ];
 
