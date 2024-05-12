@@ -28,6 +28,7 @@ const countrySlice = createSlice({
             population: country.population,
             region: country.region,
             capital: country.capital,
+            flags: country.flags.png,
           };
           countries.push(newCountry);
         }

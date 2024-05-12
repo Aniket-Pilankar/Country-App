@@ -6,6 +6,9 @@ export namespace API {
     capital: string[];
     region: string;
     population: number;
+    flags: {
+      png: string;
+    };
   }
 
   export type Countries = Country[];
