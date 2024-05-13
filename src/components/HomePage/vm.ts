@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import { fetchCountries } from "../../redux/country/thunk-api";
 import { useAppDispatch } from "../../redux/types";
 import { useSelector } from "react-redux";
@@ -8,11 +8,15 @@ import { SelectChangeEvent } from "@mui/material";
 export default function useHomePageVM() {
   const dispatch = useAppDispatch();
   const countries = useSelector(selectCountries);
-  // console.log("countries:", countries);
   const [region, setRegion] = useState("");
+  const [search, setSearch] = useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
     setRegion(event.target.value);
+  };
+
+  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
   };
 
   useEffect(
@@ -26,5 +30,7 @@ export default function useHomePageVM() {
     countries,
     handleChange,
     region,
+    handleSearch,
+    search,
   };
 }

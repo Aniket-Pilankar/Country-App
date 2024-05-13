@@ -29,7 +29,7 @@ export const useThemeContext = () => {
 };
 
 const useThemeContextProvider = () => {
-  const [mode, setMode] = useState<PaletteMode>("dark");
+  const [mode, setMode] = useState<PaletteMode>("light");
 
   const colorMode = useMemo(
     () => ({

@@ -1,14 +1,12 @@
 import React from "react";
 import useHomePageVM from "./vm";
 import MediaCard from "../../shared-components/Card";
-import { useThemeContext } from "../Context";
 import {
   FormControl,
   InputAdornment,
   InputLabel,
   MenuItem,
   Select,
-  TextField,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import {
@@ -22,7 +20,8 @@ import { options } from "../../utils/constants";
 import clsx from "clsx";
 
 const HomePage = () => {
-  const { countries, handleChange, region } = useHomePageVM();
+  const { countries, handleChange, region, handleSearch, search } =
+    useHomePageVM();
   return (
     <Root>
       <ActionWrapper>
@@ -36,6 +35,9 @@ const HomePage = () => {
             ),
           }}
           variant="outlined"
+          placeholder="Search for a country.."
+          value={search}
+          onChange={handleSearch}
         />
         <FormControl className={clsx(selectCompClasses.root)}>
           <InputLabel id="demo-simple-select-autowidth-label">
@@ -58,11 +60,20 @@ const HomePage = () => {
         </FormControl>
       </ActionWrapper>
       <Container>
-        {countries.map((country) => (
-          // <div key={country.name}>
-          <MediaCard key={country.name} {...country} />
-          // </div>
-        ))}
+        {countries
+          .filter((country) =>
+            search === ""
+              ? country
+              : country.name.toLowerCase().includes(search.toLowerCase())
+          )
+          .filter((country) =>
+            region === ""
+              ? country
+              : country.region.toLowerCase().includes(region.toLowerCase())
+          )
+          .map((country) => (
+            <MediaCard key={country.name} {...country} />
+          ))}
       </Container>
     </Root>
   );

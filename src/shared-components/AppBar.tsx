@@ -7,7 +7,6 @@ import Button from "@mui/material/Button";
 import { useThemeContext } from "../components/Context";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import { styled } from "@mui/material";
 
 export default function Topbar() {
   const { theme, colorMode } = useThemeContext();
@@ -29,6 +28,7 @@ export default function Topbar() {
             }
             color="inherit"
             onClick={colorMode.toggleMode}
+            sx={{ textTransform: "capitalize" }}
           >
             {theme.palette.mode === "dark" ? "Light Mode" : "Dark Mode"}
           </Button>

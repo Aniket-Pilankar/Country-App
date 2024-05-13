@@ -11,7 +11,6 @@ import {
 } from "./styles";
 import { Button, Chip, Stack, Typography } from "@mui/material";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import { Link } from "react-router-dom";
 
 const CountryDetails = () => {
   const { country, handleClick } = useCountryDetailsVM();
