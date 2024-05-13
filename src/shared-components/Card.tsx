@@ -21,7 +21,7 @@ export default function MediaCard({
     >
       <CardMedia sx={{ height: 200 }} image={flags} title="green iguana" />
       <CardContent sx={{ height: 200 }}>
-        <Typography gutterBottom variant="h6" component="div">
+        <Typography gutterBottom variant="h6" component="div" fontWeight={700}>
           {name}
         </Typography>
         {/* <Typography variant="body1" color="text.secondary"> */}

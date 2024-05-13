@@ -1,5 +1,5 @@
 import { Stack, styled } from "@mui/material";
-import { forDesktop, forMobile } from "../../utils/media-query";
+import { forDesktop, forMobile, forTablet } from "../../utils/media-query";
 import { generateClasses } from "../../utils/helper";
 
 export const selectCompClasses = {
@@ -18,6 +18,8 @@ export const Root = styled(Stack)(({ theme }) => ({
 
 export const ImageWrapper = styled("div")(({ theme }) => ({
   height: 401,
+  borderRadius: "20px",
+  overflow: "hidden",
   [forDesktop(theme)]: {
     width: "50%",
   },
@@ -36,6 +38,12 @@ export const DetailWrapper = styled("div")(({ theme }) => ({
     justifyContent: "center",
     alignItems: "flex-start",
     gap: theme.spacing(8),
+  },
+  [forTablet(theme)]: {
+    width: "50%",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    gap: theme.spacing(4),
   },
   [`& > .${selectCompClasses.subdetails}`]: {
     flexGrow: 1,

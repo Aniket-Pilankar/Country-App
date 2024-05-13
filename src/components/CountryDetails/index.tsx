@@ -32,7 +32,7 @@ const CountryDetails = () => {
           <img src={country.flags} width={"100%"} height={"100%"} alt="" />
         </ImageWrapper>
         <DetailWrapper className={`${selectCompClasses.subdetails}`}>
-          <Typography variant="h4" component="div">
+          <Typography variant="h4" component="div" fontWeight={700}>
             {country.name}
           </Typography>
           <SubDetailWrapper>
@@ -72,19 +72,19 @@ const CountryDetails = () => {
               <Typography variant="body2" fontWeight="500">
                 Top Level Domain:{" "}
                 <Typography variant="body2" component="span" fontWeight="300">
-                  {country.tld.join(",")}
+                  {country.tld.join(", ")}
                 </Typography>
               </Typography>
               <Typography variant="body2" fontWeight="500">
                 Currencies:{" "}
                 <Typography variant="body2" component="span" fontWeight="300">
-                  {country.currencies.join(",")}
+                  {country.currencies.join(", ")}
                 </Typography>
               </Typography>
               <Typography variant="body2" fontWeight="500">
                 Languages:{" "}
                 <Typography variant="body2" component="span" fontWeight="300">
-                  {country.languages.join(",")}
+                  {country.languages.join(", ")}
                 </Typography>
               </Typography>
             </Stack>
@@ -93,9 +93,10 @@ const CountryDetails = () => {
             <Typography variant="body1" component="div">
               Border Countries:
             </Typography>
-            <Stack direction="row" gap={1}>
+            <Stack direction="row" gap={1} flexWrap={"wrap"}>
               {country.borders.map((elem) => (
                 <Chip
+                  key={elem}
                   label={elem}
                   variant="outlined"
                   sx={{ borderRadius: "0", height: "20px" }}

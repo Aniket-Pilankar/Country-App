@@ -14,7 +14,11 @@ export default function Topbar() {
     <Box sx={{ flexGrow: 1, marginBottom: "70px" }}>
       <AppBar color="primary" enableColorOnDark>
         <Toolbar>
-          <Typography variant="body1" component="div" sx={{ flexGrow: 1 }}>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, fontWeight: 700 }}
+          >
             Where in the world?
           </Typography>
           <Button

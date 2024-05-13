@@ -38,8 +38,12 @@ const HomePage = () => {
           placeholder="Search for a country.."
           value={search}
           onChange={handleSearch}
+          sx={{ backgroundColor: "primary.main" }}
         />
-        <FormControl className={clsx(selectCompClasses.root)}>
+        <FormControl
+          sx={{ backgroundColor: "primary.main" }}
+          className={clsx(selectCompClasses.root)}
+        >
           <InputLabel id="demo-simple-select-autowidth-label">
             Filter by Region
           </InputLabel>
