@@ -20,86 +20,9 @@ import {
 } from "./styles";
 import { options } from "../../utils/constants";
 import clsx from "clsx";
-import { Countries, Country } from "../../redux/country/types";
-
-const dummy: Countries = [
-  {
-    name: "Republic of Moldova",
-    population: 2617820,
-    region: "Europe",
-    capital: ["Chișinău"],
-    flags: `https://flagcdn.com/w320/md.png`,
-    naiveName: "United States of America",
-    currencies: ["Moldovan leu", "Rupee"],
-    subregion: "Eastern Europe",
-    languages: ["Hindi", "English"],
-    tld: [".md", ".md13213"],
-  },
-  {
-    name: "United States of America",
-    population: 329484123,
-    region: "Americas",
-    capital: ["Washington, D.C."],
-    flags: `https://flagcdn.com/w320/md.png`,
-    naiveName: "United States of America",
-    currencies: ["Moldovan leu", "Rupee"],
-    subregion: "Eastern Europe",
-    languages: ["Hindi", "English"],
-    tld: [".md", ".md13213"],
-  },
-  {
-    name: "Republic of Moldova",
-    population: 2617820,
-    region: "Europe",
-    capital: ["Chișinău"],
-    flags: `https://flagcdn.com/w320/md.png`,
-    naiveName: "United States of America",
-    currencies: ["Moldovan leu", "Rupee"],
-    subregion: "Eastern Europe",
-    languages: ["Hindi", "English"],
-    tld: [".md", ".md13213"],
-  },
-  {
-    name: "United States of America",
-    population: 329484123,
-    region: "Americas",
-    capital: ["Washington, D.C."],
-    flags: `https://flagcdn.com/w320/md.png`,
-    naiveName: "United States of America",
-    currencies: ["Moldovan leu", "Rupee"],
-    subregion: "Eastern Europe",
-    languages: ["Hindi", "English"],
-    tld: [".md", ".md13213"],
-  },
-  {
-    name: "Republic of Moldova",
-    population: 2617820,
-    region: "Europe",
-    capital: ["Chișinău"],
-    flags: `https://flagcdn.com/w320/md.png`,
-    naiveName: "United States of America",
-    currencies: ["Moldovan leu", "Rupee"],
-    subregion: "Eastern Europe",
-    languages: ["Hindi", "English"],
-    tld: [".md", ".md13213"],
-  },
-  {
-    name: "United States of America",
-    population: 329484123,
-    region: "Americas",
-    capital: ["Washington, D.C."],
-    flags: `https://flagcdn.com/w320/md.png`,
-    naiveName: "United States of America",
-    currencies: ["Moldovan leu", "Rupee"],
-    subregion: "Eastern Europe",
-    languages: ["Hindi", "English"],
-    tld: [".md", ".md13213"],
-  },
-];
 
 const HomePage = () => {
   const { countries, handleChange, region } = useHomePageVM();
-  const { theme } = useThemeContext();
   return (
     <Root>
       <ActionWrapper>
@@ -135,10 +58,10 @@ const HomePage = () => {
         </FormControl>
       </ActionWrapper>
       <Container>
-        {dummy.map((country) => (
-          <div key={country.name}>
-            <MediaCard {...country} />
-          </div>
+        {countries.map((country) => (
+          // <div key={country.name}>
+          <MediaCard key={country.name} {...country} />
+          // </div>
         ))}
       </Container>
     </Root>

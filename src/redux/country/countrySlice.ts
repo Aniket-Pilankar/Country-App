@@ -40,6 +40,7 @@ const countrySlice = createSlice({
             languages: country.currencies
               ? Object.values(country.languages)
               : [],
+            borders: country.borders,
           };
           countries.push(newCountry);
         }

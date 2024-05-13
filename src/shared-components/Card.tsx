@@ -16,9 +16,13 @@ export default function MediaCard({
   flags,
 }: Country) {
   return (
-    <Card component={Link} to={`/${name}`} sx={{ backgroundColor: "inherit" }}>
-      <CardMedia sx={{ height: 140 }} image={flags} title="green iguana" />
-      <CardContent>
+    <Card
+      component={Link}
+      to={`/${name}`}
+      sx={{ backgroundColor: "inherit", textDecoration: "none" }}
+    >
+      <CardMedia sx={{ height: 200 }} image={flags} title="green iguana" />
+      <CardContent sx={{ height: 200 }}>
         <Typography gutterBottom variant="h6" component="div">
           {name}
         </Typography>

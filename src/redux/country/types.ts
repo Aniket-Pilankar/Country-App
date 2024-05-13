@@ -9,6 +9,7 @@ export interface Country {
   flags: string;
   currencies: string[];
   languages: string[];
+  borders: string[];
 }
 
 export type Countries = Country[];

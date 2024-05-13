@@ -17,6 +17,7 @@ export namespace API {
     };
     currencies: { [key: string]: Currency };
     languages: { [key: string]: string };
+    borders: string[];
   }
 
   export type Countries = Country[];
