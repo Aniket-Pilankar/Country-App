@@ -51,6 +51,7 @@ export const SubDetailWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   [forDesktop(theme)]: {
     justifyContent: "space-between",
+    gap: theme.spacing(16),
   },
   [forMobile(theme)]: {
     flexDirection: "column",
@@ -62,6 +63,9 @@ export const FooterDetailWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
   gap: theme.spacing(1),
+  [forDesktop(theme)]: {
+    alignItems: "center",
+  },
   [forMobile(theme)]: {
     flexDirection: "column",
     gap: theme.spacing(2),

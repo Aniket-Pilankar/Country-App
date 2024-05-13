@@ -98,7 +98,7 @@ const CountryDetails = () => {
                 <Chip
                   label={elem}
                   variant="outlined"
-                  sx={{ borderRadius: "0" }}
+                  sx={{ borderRadius: "0", height: "20px" }}
                 />
               ))}
             </Stack>
